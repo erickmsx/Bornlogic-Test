@@ -10,6 +10,13 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
+    var cellImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -19,11 +26,13 @@ class HomeTableViewCell: UITableViewCell {
         return label
     }()
     
-    var cellImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,6 +40,7 @@ class HomeTableViewCell: UITableViewCell {
         
         contentView.addSubview(cellImageView)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(descriptionLabel)
         
         NSLayoutConstraint.activate([
             cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 48),
@@ -41,6 +51,11 @@ class HomeTableViewCell: UITableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             titleLabel.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 16),
+            
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
     
@@ -48,9 +63,9 @@ class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(title: String, imageUrl: String) {
-        titleLabel.text = "Título: \(title)"
-        titleLabel.textColor = .white
+    func configure(title: String, content: String, imageUrl: String) {
+        titleLabel.text = "Title: \(title)"
+        descriptionLabel.text = "Description: \(content)"
         
         if let imageUrl = URL(string: imageUrl) {
             ImageLoader.loadImage(from: imageUrl) { (image) in

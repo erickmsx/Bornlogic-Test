@@ -14,4 +14,5 @@ struct HomeModel: Codable{
 struct Articles: Codable{
     let title: String
     let urlToImage: String?
+    let description: String
 }

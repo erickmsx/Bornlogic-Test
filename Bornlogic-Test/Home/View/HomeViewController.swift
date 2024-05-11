@@ -35,6 +35,9 @@ class HomeViewController: UIViewController {
     
     func setupTableView() {
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 340
+        
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -61,15 +64,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
         
         if let item = presenter?.item(at: indexPath.row) {
-            cell.configure(title: item.title, imageUrl: item.urlToImage ?? "")
+            cell.configure(title: item.title, content: item.description, imageUrl: item.urlToImage ?? "")
         }
         cell.titleLabel.textColor = presenter?.cellTextColor()
+        cell.descriptionLabel.textColor = presenter?.cellTextColor()
+        
         cell.titleLabel.font = UIFont.systemFont(ofSize: presenter?.cellTextFontSize() ?? 0)
+        cell.titleLabel.font = UIFont.systemFont(ofSize: presenter?.cellTextFontSize() ?? 0)
+        
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
     }
 }
 
