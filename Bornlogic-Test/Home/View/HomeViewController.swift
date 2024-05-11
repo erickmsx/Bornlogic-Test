@@ -60,14 +60,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
         
-        cell.titleLabel.text = presenter?.item(at: indexPath.row)?.title
+        if let item = presenter?.item(at: indexPath.row) {
+            cell.configure(title: item.title, imageUrl: item.urlToImage ?? "")
+        }
         cell.titleLabel.textColor = presenter?.cellTextColor()
         cell.titleLabel.font = UIFont.systemFont(ofSize: presenter?.cellTextFontSize() ?? 0)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 200
     }
 }
 

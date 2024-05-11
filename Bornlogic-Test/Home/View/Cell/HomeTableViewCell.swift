@@ -17,18 +17,28 @@ class HomeTableViewCell: UITableViewCell {
         return label
     }()
     
+    var cellImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
+        contentView.addSubview(cellImageView)
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            
+            cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            cellImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            cellImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            cellImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
     }
     
@@ -36,5 +46,18 @@ class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(title: String, imageUrl: String) {
+        titleLabel.text = title
+        titleLabel.textColor = .white
+        
+        if let imageUrl = URL(string: imageUrl) {
+            ImageLoader.loadImage(from: imageUrl) { (image) in
+                DispatchQueue.main.async {
+                    self.cellImageView.image = image
+                }
+            }
+        } else {
+            cellImageView.image = UIImage(named: "placeholder")
+        }
+    }
 }
-

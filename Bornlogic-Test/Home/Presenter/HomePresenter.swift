@@ -31,10 +31,6 @@ class HomePresenter: HomePresenterProtocol {
         self.interactor = interactor
     }
     
-    required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    
     func viewDidLoad() {
         interactor.fetchItems { result in
             switch result {
@@ -51,8 +47,8 @@ class HomePresenter: HomePresenterProtocol {
         switch result{
         case .success(let data):
             DispatchQueue.main.async{
-            self.homeModel = data
-            self.view?.reloadTableView()
+                self.homeModel = data
+                self.view?.reloadTableView()
             }
         case .failure(let error):
             print("\(error)")
