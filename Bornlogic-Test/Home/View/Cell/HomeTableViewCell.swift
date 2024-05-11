@@ -78,6 +78,7 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     func configure(title: String, content: String, author: String, imageUrl: String) {
+        selectionStyle = .none
         titleLabel.text = "Title: \(title)"
         descriptionLabel.text = "Description: \(content)"
         authorLabel.text = "Author: \(author)"

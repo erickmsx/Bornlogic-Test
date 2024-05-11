@@ -30,10 +30,10 @@ class HomeRouter: HomeRouterProtocol {
     }
     
     func navigateToNextScreen(from view: HomeViewProtocol) {
-//        guard let viewController = view as? UIViewController else {
-//            fatalError("View should be a UIViewController")
-//        }
-//        let secondVC = SecondViewController()
-//        viewController.navigationController?.pushViewController(secondVC, animated: true)
+        guard let viewController = view as? UIViewController else {
+            fatalError("View should be a UIViewController")
+        }
+        let articleDetailsVC = ArticleDetailsViewController()
+        viewController.navigationController?.pushViewController(articleDetailsVC, animated: true)
     }
 }
