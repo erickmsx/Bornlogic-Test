@@ -35,12 +35,22 @@ class HomeTableViewCell: UITableViewCell {
         return label
     }()
     
+    var authorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(cellImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
+        contentView.addSubview(authorLabel)
         
         NSLayoutConstraint.activate([
             cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 48),
@@ -55,7 +65,11 @@ class HomeTableViewCell: UITableViewCell {
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+            
+            authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            authorLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16),
+            authorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
     
@@ -63,9 +77,10 @@ class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(title: String, content: String, imageUrl: String) {
+    func configure(title: String, content: String, author: String, imageUrl: String) {
         titleLabel.text = "Title: \(title)"
         descriptionLabel.text = "Description: \(content)"
+        authorLabel.text = "Author: \(author)"
         
         if let imageUrl = URL(string: imageUrl) {
             ImageLoader.loadImage(from: imageUrl) { (image) in

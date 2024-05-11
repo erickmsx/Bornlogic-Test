@@ -15,4 +15,5 @@ struct Articles: Codable{
     let title: String
     let urlToImage: String?
     let description: String
+    let author: String?
 }
