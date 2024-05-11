@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6FFAB6D92BEFA6BF00A1FCC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB6D82BEFA6BF00A1FCC2 /* AppDelegate.swift */; };
+		6FFAB6DB2BEFA6BF00A1FCC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB6DA2BEFA6BF00A1FCC2 /* SceneDelegate.swift */; };
+		6FFAB6DD2BEFA6BF00A1FCC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB6DC2BEFA6BF00A1FCC2 /* ViewController.swift */; };
+		6FFAB6E02BEFA6BF00A1FCC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFAB6DE2BEFA6BF00A1FCC2 /* Main.storyboard */; };
+		6FFAB6E22BEFA6C000A1FCC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FFAB6E12BEFA6C000A1FCC2 /* Assets.xcassets */; };
+		6FFAB6E52BEFA6C000A1FCC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFAB6E32BEFA6C000A1FCC2 /* LaunchScreen.storyboard */; };
+		6FFAB6F02BEFA6C100A1FCC2 /* Bornlogic_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB6EF2BEFA6C100A1FCC2 /* Bornlogic_TestTests.swift */; };
+		6FFAB6FB2BEFA6C100A1FCC2 /* Bornlogic_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB6FA2BEFA6C100A1FCC2 /* Bornlogic_TestUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6FFAB6EC2BEFA6C100A1FCC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FFAB6CD2BEFA6BF00A1FCC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FFAB6D42BEFA6BF00A1FCC2;
+			remoteInfo = "Bornlogic-Test";
+		};
+		6FFAB6F72BEFA6C100A1FCC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FFAB6CD2BEFA6BF00A1FCC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FFAB6D42BEFA6BF00A1FCC2;
+			remoteInfo = "Bornlogic-Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6FFAB6D52BEFA6BF00A1FCC2 /* Bornlogic-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bornlogic-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FFAB6D82BEFA6BF00A1FCC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6FFAB6DA2BEFA6BF00A1FCC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6FFAB6DC2BEFA6BF00A1FCC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6FFAB6DF2BEFA6BF00A1FCC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6FFAB6E12BEFA6C000A1FCC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FFAB6E42BEFA6C000A1FCC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FFAB6E62BEFA6C000A1FCC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FFAB6EB2BEFA6C100A1FCC2 /* Bornlogic-TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bornlogic-TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FFAB6EF2BEFA6C100A1FCC2 /* Bornlogic_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_TestTests.swift; sourceTree = "<group>"; };
+		6FFAB6F12BEFA6C100A1FCC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FFAB6F62BEFA6C100A1FCC2 /* Bornlogic-TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bornlogic-TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FFAB6FA2BEFA6C100A1FCC2 /* Bornlogic_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_TestUITests.swift; sourceTree = "<group>"; };
+		6FFAB6FC2BEFA6C100A1FCC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FFAB6D22BEFA6BF00A1FCC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FFAB6E82BEFA6C100A1FCC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FFAB6F32BEFA6C100A1FCC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6FFAB6CC2BEFA6BF00A1FCC2 = {
+			isa = PBXGroup;
+			children = (
+				6FFAB6D72BEFA6BF00A1FCC2 /* Bornlogic-Test */,
+				6FFAB6EE2BEFA6C100A1FCC2 /* Bornlogic-TestTests */,
+				6FFAB6F92BEFA6C100A1FCC2 /* Bornlogic-TestUITests */,
+				6FFAB6D62BEFA6BF00A1FCC2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6FFAB6D62BEFA6BF00A1FCC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FFAB6D52BEFA6BF00A1FCC2 /* Bornlogic-Test.app */,
+				6FFAB6EB2BEFA6C100A1FCC2 /* Bornlogic-TestTests.xctest */,
+				6FFAB6F62BEFA6C100A1FCC2 /* Bornlogic-TestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FFAB6D72BEFA6BF00A1FCC2 /* Bornlogic-Test */ = {
+			isa = PBXGroup;
+			children = (
+				6FFAB6D82BEFA6BF00A1FCC2 /* AppDelegate.swift */,
+				6FFAB6DA2BEFA6BF00A1FCC2 /* SceneDelegate.swift */,
+				6FFAB6DC2BEFA6BF00A1FCC2 /* ViewController.swift */,
+				6FFAB6DE2BEFA6BF00A1FCC2 /* Main.storyboard */,
+				6FFAB6E12BEFA6C000A1FCC2 /* Assets.xcassets */,
+				6FFAB6E32BEFA6C000A1FCC2 /* LaunchScreen.storyboard */,
+				6FFAB6E62BEFA6C000A1FCC2 /* Info.plist */,
+			);
+			path = "Bornlogic-Test";
+			sourceTree = "<group>";
+		};
+		6FFAB6EE2BEFA6C100A1FCC2 /* Bornlogic-TestTests */ = {
+			isa = PBXGroup;
+			children = (
+				6FFAB6EF2BEFA6C100A1FCC2 /* Bornlogic_TestTests.swift */,
+				6FFAB6F12BEFA6C100A1FCC2 /* Info.plist */,
+			);
+			path = "Bornlogic-TestTests";
+			sourceTree = "<group>";
+		};
+		6FFAB6F92BEFA6C100A1FCC2 /* Bornlogic-TestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6FFAB6FA2BEFA6C100A1FCC2 /* Bornlogic_TestUITests.swift */,
+				6FFAB6FC2BEFA6C100A1FCC2 /* Info.plist */,
+			);
+			path = "Bornlogic-TestUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FFAB6D42BEFA6BF00A1FCC2 /* Bornlogic-Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FFAB6FF2BEFA6C100A1FCC2 /* Build configuration list for PBXNativeTarget "Bornlogic-Test" */;
+			buildPhases = (
+				6FFAB6D12BEFA6BF00A1FCC2 /* Sources */,
+				6FFAB6D22BEFA6BF00A1FCC2 /* Frameworks */,
+				6FFAB6D32BEFA6BF00A1FCC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bornlogic-Test";
+			productName = "Bornlogic-Test";
+			productReference = 6FFAB6D52BEFA6BF00A1FCC2 /* Bornlogic-Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6FFAB6EA2BEFA6C100A1FCC2 /* Bornlogic-TestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FFAB7022BEFA6C100A1FCC2 /* Build configuration list for PBXNativeTarget "Bornlogic-TestTests" */;
+			buildPhases = (
+				6FFAB6E72BEFA6C100A1FCC2 /* Sources */,
+				6FFAB6E82BEFA6C100A1FCC2 /* Frameworks */,
+				6FFAB6E92BEFA6C100A1FCC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FFAB6ED2BEFA6C100A1FCC2 /* PBXTargetDependency */,
+			);
+			name = "Bornlogic-TestTests";
+			productName = "Bornlogic-TestTests";
+			productReference = 6FFAB6EB2BEFA6C100A1FCC2 /* Bornlogic-TestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6FFAB6F52BEFA6C100A1FCC2 /* Bornlogic-TestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FFAB7052BEFA6C100A1FCC2 /* Build configuration list for PBXNativeTarget "Bornlogic-TestUITests" */;
+			buildPhases = (
+				6FFAB6F22BEFA6C100A1FCC2 /* Sources */,
+				6FFAB6F32BEFA6C100A1FCC2 /* Frameworks */,
+				6FFAB6F42BEFA6C100A1FCC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FFAB6F82BEFA6C100A1FCC2 /* PBXTargetDependency */,
+			);
+			name = "Bornlogic-TestUITests";
+			productName = "Bornlogic-TestUITests";
+			productReference = 6FFAB6F62BEFA6C100A1FCC2 /* Bornlogic-TestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FFAB6CD2BEFA6BF00A1FCC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					6FFAB6D42BEFA6BF00A1FCC2 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					6FFAB6EA2BEFA6C100A1FCC2 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 6FFAB6D42BEFA6BF00A1FCC2;
+					};
+					6FFAB6F52BEFA6C100A1FCC2 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 6FFAB6D42BEFA6BF00A1FCC2;
+					};
+				};
+			};
+			buildConfigurationList = 6FFAB6D02BEFA6BF00A1FCC2 /* Build configuration list for PBXProject "Bornlogic-Test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FFAB6CC2BEFA6BF00A1FCC2;
+			productRefGroup = 6FFAB6D62BEFA6BF00A1FCC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FFAB6D42BEFA6BF00A1FCC2 /* Bornlogic-Test */,
+				6FFAB6EA2BEFA6C100A1FCC2 /* Bornlogic-TestTests */,
+				6FFAB6F52BEFA6C100A1FCC2 /* Bornlogic-TestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FFAB6D32BEFA6BF00A1FCC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FFAB6E52BEFA6C000A1FCC2 /* LaunchScreen.storyboard in Resources */,
+				6FFAB6E22BEFA6C000A1FCC2 /* Assets.xcassets in Resources */,
+				6FFAB6E02BEFA6BF00A1FCC2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FFAB6E92BEFA6C100A1FCC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FFAB6F42BEFA6C100A1FCC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FFAB6D12BEFA6BF00A1FCC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FFAB6DD2BEFA6BF00A1FCC2 /* ViewController.swift in Sources */,
+				6FFAB6D92BEFA6BF00A1FCC2 /* AppDelegate.swift in Sources */,
+				6FFAB6DB2BEFA6BF00A1FCC2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FFAB6E72BEFA6C100A1FCC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FFAB6F02BEFA6C100A1FCC2 /* Bornlogic_TestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FFAB6F22BEFA6C100A1FCC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FFAB6FB2BEFA6C100A1FCC2 /* Bornlogic_TestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6FFAB6ED2BEFA6C100A1FCC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FFAB6D42BEFA6BF00A1FCC2 /* Bornlogic-Test */;
+			targetProxy = 6FFAB6EC2BEFA6C100A1FCC2 /* PBXContainerItemProxy */;
+		};
+		6FFAB6F82BEFA6C100A1FCC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FFAB6D42BEFA6BF00A1FCC2 /* Bornlogic-Test */;
+			targetProxy = 6FFAB6F72BEFA6C100A1FCC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6FFAB6DE2BEFA6BF00A1FCC2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FFAB6DF2BEFA6BF00A1FCC2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6FFAB6E32BEFA6C000A1FCC2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FFAB6E42BEFA6C000A1FCC2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FFAB6FD2BEFA6C100A1FCC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6FFAB6FE2BEFA6C100A1FCC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FFAB7002BEFA6C100A1FCC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bornlogic-Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "erickmxav.Bornlogic-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6FFAB7012BEFA6C100A1FCC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bornlogic-Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "erickmxav.Bornlogic-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6FFAB7032BEFA6C100A1FCC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bornlogic-TestTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "erickmxav.Bornlogic-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bornlogic-Test.app/Bornlogic-Test";
+			};
+			name = Debug;
+		};
+		6FFAB7042BEFA6C100A1FCC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bornlogic-TestTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "erickmxav.Bornlogic-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bornlogic-Test.app/Bornlogic-Test";
+			};
+			name = Release;
+		};
+		6FFAB7062BEFA6C100A1FCC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bornlogic-TestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "erickmxav.Bornlogic-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Bornlogic-Test";
+			};
+			name = Debug;
+		};
+		6FFAB7072BEFA6C100A1FCC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bornlogic-TestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "erickmxav.Bornlogic-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Bornlogic-Test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FFAB6D02BEFA6BF00A1FCC2 /* Build configuration list for PBXProject "Bornlogic-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FFAB6FD2BEFA6C100A1FCC2 /* Debug */,
+				6FFAB6FE2BEFA6C100A1FCC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FFAB6FF2BEFA6C100A1FCC2 /* Build configuration list for PBXNativeTarget "Bornlogic-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FFAB7002BEFA6C100A1FCC2 /* Debug */,
+				6FFAB7012BEFA6C100A1FCC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FFAB7022BEFA6C100A1FCC2 /* Build configuration list for PBXNativeTarget "Bornlogic-TestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FFAB7032BEFA6C100A1FCC2 /* Debug */,
+				6FFAB7042BEFA6C100A1FCC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FFAB7052BEFA6C100A1FCC2 /* Build configuration list for PBXNativeTarget "Bornlogic-TestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FFAB7062BEFA6C100A1FCC2 /* Debug */,
+				6FFAB7072BEFA6C100A1FCC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FFAB6CD2BEFA6BF00A1FCC2 /* Project object */;
+}
