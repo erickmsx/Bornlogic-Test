@@ -12,12 +12,9 @@ protocol HomePresenterProtocol: AnyObject {
     func viewDidLoad()
     func itemsFetched(result: Result<HomeModel, Error>)
     
-    //collection view
     func numberOfItems() -> Int
     func item(at index: Int) -> Articles?
     func didSelectItem(at index: Int)
-    func cellTextColor() -> UIColor
-    func cellTextFontSize() -> CGFloat
 }
 
 class HomePresenter: HomePresenterProtocol {
@@ -62,14 +59,6 @@ class HomePresenter: HomePresenterProtocol {
     
     func item(at index: Int) -> Articles? {
         return homeModel?.articles[index]
-    }
-    
-    func cellTextColor() -> UIColor {
-        return .white
-    }
-    
-    func cellTextFontSize() -> CGFloat {
-        return 16
     }
     
     func didSelectItem(at index: Int) {

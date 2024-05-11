@@ -29,7 +29,7 @@ class HomeTableViewCell: UITableViewCell {
     var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
@@ -38,7 +38,7 @@ class HomeTableViewCell: UITableViewCell {
     var authorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label

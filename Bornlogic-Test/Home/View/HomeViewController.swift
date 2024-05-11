@@ -64,13 +64,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
         
         if let item = presenter?.item(at: indexPath.row) {
-            cell.configure(title: item.title, content: item.description, author: item.author ?? "", imageUrl: item.urlToImage ?? "")
+            cell.configure(title: item.title, content: item.description, author: item.author ?? "Unknown", imageUrl: item.urlToImage ?? "")
         }
-        cell.titleLabel.textColor = presenter?.cellTextColor()
-        cell.descriptionLabel.textColor = presenter?.cellTextColor()
-        
-        cell.titleLabel.font = UIFont.systemFont(ofSize: presenter?.cellTextFontSize() ?? 0)
-        cell.titleLabel.font = UIFont.systemFont(ofSize: presenter?.cellTextFontSize() ?? 0)
         
         return cell
     }
