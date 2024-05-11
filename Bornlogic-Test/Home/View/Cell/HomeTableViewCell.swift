@@ -14,6 +14,8 @@ class HomeTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     
@@ -27,18 +29,18 @@ class HomeTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.addSubview(titleLabel)
         contentView.addSubview(cellImageView)
+        contentView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
+            cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 48),
+            cellImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -48),
+            cellImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            cellImageView.heightAnchor.constraint(equalToConstant: 200),
+            
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            
-            cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            cellImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            cellImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            cellImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            titleLabel.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 16),
         ])
     }
     
@@ -47,7 +49,7 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     func configure(title: String, imageUrl: String) {
-        titleLabel.text = title
+        titleLabel.text = "Título: \(title)"
         titleLabel.textColor = .white
         
         if let imageUrl = URL(string: imageUrl) {
