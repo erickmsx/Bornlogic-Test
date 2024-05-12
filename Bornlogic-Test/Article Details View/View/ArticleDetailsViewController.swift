@@ -14,7 +14,7 @@ protocol ArticleDetailsViewProtocol{
 class ArticleDetailsViewController: UIViewController {
     
     var article: Articles
-    var presenter: ArticleDetailsProtocol?
+    var publishDate: String
     
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -22,8 +22,9 @@ class ArticleDetailsViewController: UIViewController {
         return tableView
     }()
     
-    init(article: Articles) {
+    init(article: Articles, publishDate: String) {
         self.article = article
+        self.publishDate = publishDate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,6 +34,7 @@ class ArticleDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Article"
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -62,7 +64,7 @@ extension ArticleDetailsViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ArticlesDetailsTableViewCell
         
-        cell.configure(content: article.content ?? "", imageUrl: article.urlToImage ?? "")
+        cell.configure(content: article.content ?? "", imageUrl: article.urlToImage ?? "", publishDate: publishDate)
         return cell
     }
     

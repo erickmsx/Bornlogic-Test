@@ -22,7 +22,6 @@
 		6FFAB71B2BEFBFF200A1FCC2 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB71A2BEFBFF200A1FCC2 /* ImageLoader.swift */; };
 		6FFAB7232BEFE2D700A1FCC2 /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB7222BEFE2D700A1FCC2 /* ArticleDetailsViewController.swift */; };
 		6FFAB7262BF1206C00A1FCC2 /* ArticlesDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB7252BF1206C00A1FCC2 /* ArticlesDetailsTableViewCell.swift */; };
-		6FFAB7292BF1217F00A1FCC2 /* ArticleDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB7282BF1217F00A1FCC2 /* ArticleDetailsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		6FFAB71A2BEFBFF200A1FCC2 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		6FFAB7222BEFE2D700A1FCC2 /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
 		6FFAB7252BF1206C00A1FCC2 /* ArticlesDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		6FFAB7282BF1217F00A1FCC2 /* ArticleDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				6FFAB72A2BF1221E00A1FCC2 /* View */,
-				6FFAB7272BF1216A00A1FCC2 /* Presenter */,
 				6FFAB7242BF1201600A1FCC2 /* Cell */,
 			);
 			path = "Article Details View";
@@ -230,14 +227,6 @@
 				6FFAB7252BF1206C00A1FCC2 /* ArticlesDetailsTableViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		6FFAB7272BF1216A00A1FCC2 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				6FFAB7282BF1217F00A1FCC2 /* ArticleDetailsPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		6FFAB72A2BF1221E00A1FCC2 /* View */ = {
@@ -383,7 +372,6 @@
 				6FFAB7132BEFA8EC00A1FCC2 /* HomePresenter.swift in Sources */,
 				6FFAB7232BEFE2D700A1FCC2 /* ArticleDetailsViewController.swift in Sources */,
 				6FFAB7112BEFA8E100A1FCC2 /* HomeModel.swift in Sources */,
-				6FFAB7292BF1217F00A1FCC2 /* ArticleDetailsPresenter.swift in Sources */,
 				6FFAB7262BF1206C00A1FCC2 /* ArticlesDetailsTableViewCell.swift in Sources */,
 				6FFAB71B2BEFBFF200A1FCC2 /* ImageLoader.swift in Sources */,
 				6FFAB6DB2BEFA6BF00A1FCC2 /* SceneDelegate.swift in Sources */,

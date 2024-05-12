@@ -64,7 +64,7 @@ class HomeInteractor: HomeInteractorProtocol {
             
             do {
                 let items = try JSONDecoder().decode(HomeModel.self, from: data)
-                self.presenter?.itemsFetched(result: .success(items))
+                self.presenter?.itemsFetched(result: .success(items), publishDate: date)
             } catch {
                 completion(.failure(NetworkError.invalidData))
                 print("Error decoding data: \(error.localizedDescription)")

@@ -16,7 +16,16 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    var descriptionLabel: UILabel = {
+    var contentLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        return label
+    }()
+    
+    var publishDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
@@ -29,7 +38,8 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(cellImageView)
-        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(contentLabel)
+        contentView.addSubview(publishDateLabel)
         
         NSLayoutConstraint.activate([
             cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 48),
@@ -37,9 +47,12 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
             cellImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             cellImageView.heightAnchor.constraint(equalToConstant: 200),
             
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            descriptionLabel.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 16)
+            contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            contentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            contentLabel.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 16),
+            
+            publishDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            publishDateLabel.topAnchor.constraint(equalTo: contentLabel.bottomAnchor, constant: 16)
         ])
     }
     
@@ -47,9 +60,10 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(content: String, imageUrl: String) {
+    func configure(content: String, imageUrl: String, publishDate: String) {
         selectionStyle = .none
-        descriptionLabel.text = "Description: \(content)"
+        contentLabel.text = "Content: \(content)"
+        publishDateLabel.text = publishDate
         
         if let imageUrl = URL(string: imageUrl) {
             ImageLoader.loadImage(from: imageUrl) { (image) in

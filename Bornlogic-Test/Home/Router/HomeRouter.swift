@@ -9,7 +9,7 @@ import UIKit
 
 protocol HomeRouterProtocol: AnyObject {
     static func createModule() -> UIViewController
-    func navigateToNextScreen(from view: HomeViewProtocol, article: Articles)
+    func navigateToNextScreen(from view: HomeViewProtocol, article: Articles, publishDate: String)
 }
 
 class HomeRouter: HomeRouterProtocol {
@@ -29,11 +29,11 @@ class HomeRouter: HomeRouterProtocol {
         return view
     }
     
-    func navigateToNextScreen(from view: HomeViewProtocol, article: Articles) {
+    func navigateToNextScreen(from view: HomeViewProtocol, article: Articles, publishDate: String) {
         guard let viewController = view as? UIViewController else {
             fatalError("View should be a UIViewController")
         }
-        let articleDetailsVC = ArticleDetailsViewController(article: article)
+        let articleDetailsVC = ArticleDetailsViewController(article: article, publishDate: publishDate)
         viewController.navigationController?.pushViewController(articleDetailsVC, animated: true)
     }
 }
