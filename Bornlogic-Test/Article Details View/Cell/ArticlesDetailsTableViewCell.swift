@@ -22,6 +22,7 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .left
         return label
     }()
     
