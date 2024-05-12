@@ -62,6 +62,8 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didSelectItem(at index: Int) {
-        router?.navigateToNextScreen(from: view!)
+        if let article = homeModel?.articles[index] {
+            router?.navigateToNextScreen(from: view!, article: article)
+        }
     }
 }
