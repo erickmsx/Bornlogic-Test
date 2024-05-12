@@ -64,7 +64,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
         
         if let item = presenter?.item(at: indexPath.row) {
-            cell.configure(title: item.title, content: item.description, author: item.author ?? "Unknown", imageUrl: item.urlToImage ?? "")
+            cell.configure(title: item.title ?? "", content: item.description ?? "", author: item.author ?? "Unknown", imageUrl: item.urlToImage ?? "")
         }
         
         return cell
