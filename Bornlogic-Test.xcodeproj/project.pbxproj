@@ -214,8 +214,16 @@
 			isa = PBXGroup;
 			children = (
 				6FFAB7222BEFE2D700A1FCC2 /* ArticleDetailsViewController.swift */,
+				6FFAB7242BF1201600A1FCC2 /* Cell */,
 			);
 			path = "Article Details View";
+			sourceTree = "<group>";
+		};
+		6FFAB7242BF1201600A1FCC2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
