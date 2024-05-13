@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F0BC7DD2BF2631F00EF4107 /* HomeViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0BC7DC2BF2631F00EF4107 /* HomeViewModel_Tests.swift */; };
+		6F0BC7DD2BF2631F00EF4107 /* HomeInteractor_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0BC7DC2BF2631F00EF4107 /* HomeInteractor_Tests.swift */; };
 		6FFAB6D92BEFA6BF00A1FCC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB6D82BEFA6BF00A1FCC2 /* AppDelegate.swift */; };
 		6FFAB6DB2BEFA6BF00A1FCC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB6DA2BEFA6BF00A1FCC2 /* SceneDelegate.swift */; };
 		6FFAB6DD2BEFA6BF00A1FCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAB6DC2BEFA6BF00A1FCC2 /* HomeViewController.swift */; };
@@ -42,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6F0BC7DC2BF2631F00EF4107 /* HomeViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel_Tests.swift; sourceTree = "<group>"; };
+		6F0BC7DC2BF2631F00EF4107 /* HomeInteractor_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor_Tests.swift; sourceTree = "<group>"; };
 		6FFAB6D52BEFA6BF00A1FCC2 /* Bornlogic-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bornlogic-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FFAB6D82BEFA6BF00A1FCC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FFAB6DA2BEFA6BF00A1FCC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		6FFAB6EE2BEFA6C100A1FCC2 /* Bornlogic-TestTests */ = {
 			isa = PBXGroup;
 			children = (
-				6F0BC7DC2BF2631F00EF4107 /* HomeViewModel_Tests.swift */,
+				6F0BC7DC2BF2631F00EF4107 /* HomeInteractor_Tests.swift */,
 				6FFAB6F12BEFA6C100A1FCC2 /* Info.plist */,
 			);
 			path = "Bornlogic-TestTests";
@@ -384,7 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F0BC7DD2BF2631F00EF4107 /* HomeViewModel_Tests.swift in Sources */,
+				6F0BC7DD2BF2631F00EF4107 /* HomeInteractor_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
