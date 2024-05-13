@@ -15,7 +15,7 @@ enum NetworkError: Error {
 }
 
 protocol HomeInteractorProtocol: AnyObject {
-    func fetchItems(completion: @escaping(Result<HomeModel, Error>) -> Void)
+    func fetchArticles()
 }
 
 class HomeInteractor: HomeInteractorProtocol {
@@ -23,7 +23,7 @@ class HomeInteractor: HomeInteractorProtocol {
     static let shared = HomeInteractor()
     weak var presenter: HomePresenterProtocol?
     
-    func fetchItems(completion: @escaping(Result<HomeModel, Error>) -> Void) {
+    func fetchArticles() {
         
         let apiKey = "91af6e9ba0394c3fa88767b59d8754f6"
         let baseUrl = "https://newsapi.org/v2/everything"
@@ -39,34 +39,34 @@ class HomeInteractor: HomeInteractorProtocol {
         ]
         
         guard let url = components?.url else {
-            completion(.failure(NetworkError.invalidURL))
+            presenter?.articlesFetched(result: .failure(NetworkError.invalidURL), publishDate: "")
             return
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                completion(.failure(NetworkError.requestFailed))
+                self.presenter?.articlesFetched(result: .failure(NetworkError.requestFailed), publishDate: "")
                 print("Error: \(error.localizedDescription)")
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                completion(.failure(NetworkError.requestFailed))
+                self.presenter?.articlesFetched(result: .failure(NetworkError.requestFailed), publishDate: "")
                 print("Invalid response")
                 return
             }
             
             guard let data = data else {
-                completion(.failure(NetworkError.invalidData))
+                self.presenter?.articlesFetched(result: .failure(NetworkError.invalidData), publishDate: "")
                 print("No data received")
                 return
             }
             
             do {
                 let items = try JSONDecoder().decode(HomeModel.self, from: data)
-                self.presenter?.itemsFetched(result: .success(items), publishDate: date)
+                self.presenter?.articlesFetched(result: .success(items), publishDate: date)
             } catch {
-                completion(.failure(NetworkError.invalidData))
+                self.presenter?.articlesFetched(result: .failure(NetworkError.invalidData), publishDate: date)
                 print("Error decoding data: \(error.localizedDescription)")
             }
         }.resume()
@@ -86,7 +86,7 @@ class HomeInteractor: HomeInteractorProtocol {
             let dateString = dateFormatter.string(from: previousDate)
             return dateString
         } else {
-            return "Erro ao calcular a data anterior"
+            return "Error getting the data"
         }
     }
 }

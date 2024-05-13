@@ -10,8 +10,9 @@ import UIKit
 
 protocol HomePresenterProtocol: AnyObject {
     func viewDidLoad()
-    func itemsFetched(result: Result<HomeModel, Error>, publishDate: String)
+    func articlesFetched(result: Result<HomeModel, Error>, publishDate: String)
     
+    //TableView funcs
     func numberOfItems() -> Int
     func item(at index: Int) -> Articles?
     func didSelectItem(at index: Int)
@@ -30,18 +31,11 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func viewDidLoad() {
-        interactor.fetchItems { result in
-            switch result {
-            case .success(let items):
-                print(items)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        interactor.fetchArticles()
     }
     
-    //MARK: REQUEST
-    func itemsFetched(result: Result<HomeModel, Error>, publishDate: String) {
+    //MARK: Requests
+    func articlesFetched(result: Result<HomeModel, Error>, publishDate: String) {
         switch result{
         case .success(let data):
             DispatchQueue.main.async{
