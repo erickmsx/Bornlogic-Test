@@ -8,7 +8,7 @@
 import XCTest
 @testable import Bornlogic_Test
 
-class HomeViewModel_Tests: XCTestCase {
+class HomeInteractor_Tests: XCTestCase {
     
     let presenter = HomePresenter(interactor: HomeServiceMock())
     
