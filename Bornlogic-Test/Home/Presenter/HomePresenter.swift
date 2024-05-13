@@ -10,7 +10,7 @@ import UIKit
 
 protocol HomePresenterProtocol: AnyObject {
     func viewDidLoad()
-    func itemsFetched(result: Result<HomeModel, Error>)
+    func itemsFetched(result: Result<HomeModel, Error>, publishDate: String)
     
     func numberOfItems() -> Int
     func item(at index: Int) -> Articles?
@@ -23,6 +23,7 @@ class HomePresenter: HomePresenterProtocol {
     var router: HomeRouterProtocol?
     private var homeModel: HomeModel?
     var interactor: HomeInteractorProtocol
+    var publishDate: String = ""
     
     init(interactor: HomeInteractorProtocol) {
         self.interactor = interactor
@@ -40,10 +41,11 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     //MARK: REQUEST
-    func itemsFetched(result: Result<HomeModel, Error>) {
+    func itemsFetched(result: Result<HomeModel, Error>, publishDate: String) {
         switch result{
         case .success(let data):
             DispatchQueue.main.async{
+                self.publishDate = publishDate
                 self.homeModel = data
                 self.view?.reloadTableView()
             }
@@ -62,6 +64,8 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didSelectItem(at index: Int) {
-        router?.navigateToNextScreen(from: view!)
+        if let article = homeModel?.articles[index] {
+            router?.navigateToNextScreen(from: view!, article: article, publishDate: publishDate)
+        }
     }
 }

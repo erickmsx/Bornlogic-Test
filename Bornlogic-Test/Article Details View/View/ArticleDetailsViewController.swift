@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ArticleDetailsViewController.swift
 //  Bornlogic-Test
 //
 //  Created by Erick Martins on 11/05/24.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol HomeViewProtocol: AnyObject {
-    func reloadTableView()
+protocol ArticleDetailsViewProtocol{
+    func updateTableView()
 }
 
-class HomeViewController: UIViewController {
+class ArticleDetailsViewController: UIViewController {
     
-    var presenter: HomePresenterProtocol?
-    var items: [HomeModel] = []
+    var article: Articles
+    var publishDate: String
     
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -22,19 +22,27 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
+    init(article: Articles, publishDate: String) {
+        self.article = article
+        self.publishDate = publishDate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        presenter?.viewDidLoad()
-        navigationItem.title = "Home"
-        view.backgroundColor = .blue
+        navigationItem.title = "Article"
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
         setupTableView()
     }
     
     func setupTableView() {
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(ArticlesDetailsTableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 340
         
@@ -48,30 +56,17 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: HomeViewProtocol {
-    
-    func reloadTableView() {
-        tableView.reloadData()
-    }
-}
-
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+extension ArticleDetailsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.numberOfItems() ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ArticlesDetailsTableViewCell
         
-        if let item = presenter?.item(at: indexPath.row) {
-            cell.configure(title: item.title ?? "", content: item.description ?? "", author: item.author ?? "Unknown", imageUrl: item.urlToImage ?? "")
-        }
-        
+        cell.configure(content: article.content ?? "", imageUrl: article.urlToImage ?? "", publishDate: publishDate)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didSelectItem(at: indexPath.row)
-    }
 }
 

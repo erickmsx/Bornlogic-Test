@@ -1,15 +1,14 @@
 //
-//  HomeTableViewCell.swift
+//  ArticlesDetailsTableViewCell.swift
 //  Bornlogic-Test
 //
-//  Created by Erick Martins on 11/05/24.
+//  Created by Erick Martins on 12/05/24.
 //
 
-import Foundation
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
-    
+class ArticlesDetailsTableViewCell: UITableViewCell {
+
     var cellImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,25 +16,17 @@ class HomeTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    var titleLabel: UILabel = {
+    var contentLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .left
         return label
     }()
     
-    var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        return label
-    }()
-    
-    var authorLabel: UILabel = {
+    var publishDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
@@ -48,9 +39,8 @@ class HomeTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(cellImageView)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(descriptionLabel)
-        contentView.addSubview(authorLabel)
+        contentView.addSubview(contentLabel)
+        contentView.addSubview(publishDateLabel)
         
         NSLayoutConstraint.activate([
             cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 48),
@@ -58,18 +48,12 @@ class HomeTableViewCell: UITableViewCell {
             cellImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             cellImageView.heightAnchor.constraint(equalToConstant: 200),
             
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            titleLabel.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 16),
+            contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            contentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            contentLabel.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 16),
             
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            
-            authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            authorLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16),
-            authorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+            publishDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            publishDateLabel.topAnchor.constraint(equalTo: contentLabel.bottomAnchor, constant: 16)
         ])
     }
     
@@ -77,11 +61,10 @@ class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(title: String, content: String, author: String, imageUrl: String) {
+    func configure(content: String, imageUrl: String, publishDate: String) {
         selectionStyle = .none
-        titleLabel.text = "Title: \(title)"
-        descriptionLabel.text = "Description: \(content)"
-        authorLabel.text = "Author: \(author)"
+        contentLabel.text = "Content: \(content)"
+        publishDateLabel.text = publishDate
         
         if let imageUrl = URL(string: imageUrl) {
             ImageLoader.loadImage(from: imageUrl) { (image) in

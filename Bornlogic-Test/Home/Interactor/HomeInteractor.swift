@@ -24,9 +24,21 @@ class HomeInteractor: HomeInteractorProtocol {
     weak var presenter: HomePresenterProtocol?
     
     func fetchItems(completion: @escaping(Result<HomeModel, Error>) -> Void) {
-        let baseUrl = "https://newsapi.org/v2/everything?q=tesla&from=2024-04-11&sortBy=publishedAt&apiKey=91af6e9ba0394c3fa88767b59d8754f6"
         
-        guard let url = URL(string: "\(baseUrl)") else {
+        let apiKey = "91af6e9ba0394c3fa88767b59d8754f6"
+        let baseUrl = "https://newsapi.org/v2/everything"
+        
+        let date = getPreviousDate()
+        
+        var components = URLComponents(string: baseUrl)
+        components?.queryItems = [
+            URLQueryItem(name: "q", value: "tesla"),
+            URLQueryItem(name: "from", value: date),
+            URLQueryItem(name: "sortBy", value: "publishedAt"),
+            URLQueryItem(name: "apiKey", value: apiKey)
+        ]
+        
+        guard let url = components?.url else {
             completion(.failure(NetworkError.invalidURL))
             return
         }
@@ -52,7 +64,7 @@ class HomeInteractor: HomeInteractorProtocol {
             
             do {
                 let items = try JSONDecoder().decode(HomeModel.self, from: data)
-                self.presenter?.itemsFetched(result: .success(items))
+                self.presenter?.itemsFetched(result: .success(items), publishDate: date)
             } catch {
                 completion(.failure(NetworkError.invalidData))
                 print("Error decoding data: \(error.localizedDescription)")
@@ -60,5 +72,22 @@ class HomeInteractor: HomeInteractorProtocol {
         }.resume()
     }
     
+    func getPreviousDate() -> String {
+        let currentDate = Date()
+        
+        var dateComponents = DateComponents()
+        dateComponents.day = -1
+        
+        let calendar = Calendar.current
+        if let previousDate = calendar.date(byAdding: dateComponents, to: currentDate) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            let dateString = dateFormatter.string(from: previousDate)
+            return dateString
+        } else {
+            return "Erro ao calcular a data anterior"
+        }
+    }
 }
 
