@@ -63,7 +63,7 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
     
     func configure(content: String, imageUrl: String, publishDate: String) {
         selectionStyle = .none
-        contentLabel.text = "Content: \(content)"
+        contentLabel.text = content
         publishDateLabel.text = publishDate
         
         if let imageUrl = URL(string: imageUrl) {

@@ -22,7 +22,7 @@ class HomePresenter: HomePresenterProtocol {
     
     weak var view: HomeViewProtocol?
     var router: HomeRouterProtocol?
-    private var homeModel: HomeModel?
+    var homeModel: HomeModel?
     var interactor: HomeInteractorProtocol
     var publishDate: String = ""
     
@@ -46,6 +46,11 @@ class HomePresenter: HomePresenterProtocol {
         case .failure(let error):
             print("\(error)")
         }
+    }
+    
+    func articlesFetchedMock(){
+        let homeModel = interactor.fetchArticlesMock()
+        self.homeModel = homeModel
     }
     
     //MARK: TableView

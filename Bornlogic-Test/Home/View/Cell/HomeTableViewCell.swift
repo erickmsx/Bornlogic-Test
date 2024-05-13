@@ -79,9 +79,9 @@ class HomeTableViewCell: UITableViewCell {
     
     func configure(title: String, content: String, author: String, imageUrl: String) {
         selectionStyle = .none
-        titleLabel.text = "Title: \(title)"
-        descriptionLabel.text = "Description: \(content)"
-        authorLabel.text = "Author: \(author)"
+        titleLabel.text = title
+        descriptionLabel.text = content
+        authorLabel.text = author
         
         if let imageUrl = URL(string: imageUrl) {
             ImageLoader.loadImage(from: imageUrl) { (image) in
