@@ -16,6 +16,7 @@ enum NetworkError: Error {
 
 protocol HomeInteractorProtocol: AnyObject {
     func fetchArticles()
+    func fetchArticlesMock() -> HomeModel
 }
 
 class HomeInteractor: HomeInteractorProtocol {
@@ -88,6 +89,10 @@ class HomeInteractor: HomeInteractorProtocol {
         } else {
             return "Error getting the data"
         }
+    }
+    
+    func fetchArticlesMock() -> HomeModel {
+        return HomeModel(articles: [Articles(title: "titleTest", urlToImage: "urlTest", description: "descriptionTest", author: "authorTest", content: "contentTest")])
     }
 }
 
