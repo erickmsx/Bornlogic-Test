@@ -29,7 +29,7 @@ class HomeInteractor: HomeInteractorProtocol {
         let apiKey = "91af6e9ba0394c3fa88767b59d8754f6"
         let baseUrl = "https://newsapi.org/v2/everything"
         
-        let date = getPreviousDate()
+        let date = getPublishDate()
         
         var components = URLComponents(string: baseUrl)
         components?.queryItems = [
@@ -73,7 +73,7 @@ class HomeInteractor: HomeInteractorProtocol {
         }.resume()
     }
     
-    func getPreviousDate() -> String {
+    func getPublishDate() -> String {
         let currentDate = Date()
         
         var dateComponents = DateComponents()
